@@ -1,5 +1,7 @@
 # Deploying Gemma 4 on Cloud Run with vLLM
 
+![Open Models vs Hosted APIs](open-models-vs-hosted-apis.png)
+
 A hands-on workshop for **GDG Cloud Manila**.
 
 You'll deploy a Gemma 4 instruction-tuned model behind a standard
