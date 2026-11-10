@@ -2,7 +2,9 @@
 
 ![Open Models vs Hosted APIs](open-models-vs-hosted-apis.png)
 
-A hands-on workshop for **GDG Cloud Manila**.
+A hands-on workshop by Joshua M. de Guzman, Google Developer Expert, first run at
+**GDG Cloud Manila: Build with AI** on June 6, 2026, alongside the talk
+*Deploy Gemma 4 Models on Google Cloud Run*.
 
 You'll deploy a Gemma 4 instruction-tuned model behind a standard
 `/v1/chat/completions` HTTP API on **Cloud Run GPUs**, served by **vLLM**, with
@@ -30,6 +32,9 @@ clearly-warned opt-in.
 ## Two setup options — pick one before Step 1
 
 How you get the model weights into place decides whether you run a few extra steps:
+
+> **Running this after the event?** The shared bucket from the June 6 workshop is
+> no longer public. Use **Option B** below.
 
 - **Option A — Use the speaker's shared bucket** *(recommended for the workshop — saves ~15–20 min)*
   The weights are already cached. You **skip Steps 4, 5, and 7** and point your
@@ -131,6 +136,24 @@ Strictly sequential, **01 → 10**. Each file ends with a `Next →` link. With
 
 Each file is self-contained: it re-states its own prerequisites so you can jump
 back in after a coffee break or a dropped Cloud Shell session.
+
+---
+
+## Chat with your model in a browser
+
+[`chat-tester/`](./chat-tester) is a small Next.js app that sends prompts to your
+service's `/v1/chat/completions` endpoint and streams the reply. You can open
+several chats side by side and send one prompt to all of them, which is handy for
+comparing tracks. It proxies requests server-side, so it works even though vLLM
+sends no CORS headers.
+
+![Cloud Run Chat Tester](docs/chat-tester.png)
+
+```bash
+cd chat-tester
+npm install
+npm run dev   # http://localhost:3000
+```
 
 ---
 
